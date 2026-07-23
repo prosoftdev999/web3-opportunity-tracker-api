@@ -4,6 +4,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from app.api.routes.health import router as health_router
 from app.api.routes.opportunities import router as opportunities_router
 from app.api.routes.saved_opportunities import router as saved_router
+from app.api.routes.github import router as github_router
 from app.core.config import settings
 
 
@@ -43,6 +44,10 @@ app.include_router(
     prefix=settings.api_v1_prefix,
 )
 
+app.include_router(
+    github_router,
+    prefix=settings.api_v1_prefix,
+)
 
 @app.get("/", tags=["Root"])
 async def root() -> dict[str, str]:
