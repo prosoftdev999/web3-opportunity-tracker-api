@@ -8,6 +8,7 @@ from sqlalchemy.ext.asyncio import async_engine_from_config
 from app.core.config import settings
 from app.db.base import Base
 from app.models.opportunity import Opportunity  # noqa: F401
+from app.models.saved_opportunity import SavedOpportunity  # noqa: F401
 
 
 config = context.config
